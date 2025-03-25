@@ -76,7 +76,7 @@ export const App: React.FC = () => {
                 <TodoList
                   todos={filteredByQuery}
                   openModal={openModal}
-                  selectedUserTodo={selectedUserTodo}
+                  selectedUserTodo={selectedUserTodo?.id}
                 />
               )}
             </div>

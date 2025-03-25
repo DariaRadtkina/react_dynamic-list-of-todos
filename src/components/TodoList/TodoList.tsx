@@ -4,7 +4,7 @@ import { Todo } from '../../types/Todo';
 type Props = {
   todos: Todo[];
   openModal: (todo: Todo) => void;
-  selectedUserTodo?: Todo;
+  selectedUserTodo?: number;
 };
 
 export const TodoList: React.FC<Props> = ({
@@ -31,7 +31,7 @@ export const TodoList: React.FC<Props> = ({
         <tr
           data-cy="todo"
           className={
-            selectedUserTodo?.id === todo.id ? 'has-background-info-light' : ''
+            selectedUserTodo === todo.id ? 'has-background-info-light' : ''
           }
           key={todo.id}
         >
@@ -64,7 +64,7 @@ export const TodoList: React.FC<Props> = ({
               <span className="icon">
                 <i
                   className={
-                    selectedUserTodo?.id === todo.id
+                    selectedUserTodo === todo.id
                       ? 'far fa-eye-slash'
                       : 'far fa-eye'
                   }
